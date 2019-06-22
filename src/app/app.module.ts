@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { HeroesComponent } from './heroes/heroes.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TryComponent } from './try/try.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -24,7 +23,6 @@ import { CreateRoomComponent } from './components/create-room/create-room.compon
 @NgModule({
   declarations: [
     AppComponent,
-    HeroesComponent,
     TryComponent,
     DashboardComponent,
     ServiceesComponent,

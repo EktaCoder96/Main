@@ -1,0 +1,62 @@
+<form [formGroup]="customform" (ngSubmit)="onSubmit()">
+  <label>Hotel Name: </label>
+  <input type="text" formControlName="name"><br>
+
+  <label>State:</label>
+  <mat-form-field>
+    <mat-label>Select State</mat-label>
+    <mat-select formControlName="state" (selectionChange)="onStateSelect($event.value)">
+      <mat-option *ngFor="let item of statesList" [value]="item.id">
+        {{item.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <label>City:</label>
+  <mat-form-field>
+    <mat-label>Select City</mat-label>
+    <mat-select formControlName="city">
+      <mat-option *ngFor="let item of cityList" [value]="item.id">
+        {{item.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <label> Hotel Chain</label>
+  <mat-form-field>
+    <mat-label>Select</mat-label>
+    <mat-select formControlName="chain" (selectionChange)="onChainSelect($event.value)">
+      <mat-option *ngFor="let item of chainList" [value]="item.id">
+        {{item.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <label>Hotel Brand</label>
+  <mat-form-field>
+    <mat-label>Select</mat-label>
+    <mat-select formControlName="brand">
+      <mat-option *ngFor="let item of brandList" [value]="item.id">
+        {{item.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <label>Rooms</label>
+  <mat-form-field>
+    <mat-label>Select</mat-label>
+    <mat-select formControlName="rooms">
+      <mat-option *ngFor="let item of roomList" [value]="item">
+        {{item}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div>
+    <span class="user-register-button">
+      <button type="submit" [disabled]="!customform.valid">Create</button>
+    </span>
+
+    <span><button type=" reset">Reset</button></span>
+  </div>
+</form>

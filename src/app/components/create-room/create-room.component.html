@@ -1,0 +1,29 @@
+    <form [formGroup]="customfrom" (ngSubmit)="onSubmit()">
+
+        <!-- <input type="text" [formControl]="state"><br><br> -->
+        <label> Room: </label>
+        <mat-form-field >
+            <mat-label>Select</mat-label>
+            <mat-select formControlName="room">
+              <mat-option *ngFor="let item of roomsList" [value]="item.id">
+                {{item.name}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <label> Room Occupancy: </label>
+           <mat-form-field>
+            <mat-label>Select</mat-label>
+              <mat-select formControlName="roomoccupy">
+                <mat-option *ngFor="let item of occupiesList" [value]="item.id">
+                 {{item.id}}
+              </mat-option>
+              </mat-select>
+           </mat-form-field>
+    <div>
+     <span class="create-room-button"><button type="submit">Create</button></span>     
+     
+     <span><button type="reset">Reset</button></span>      
+    </div>    
+    </form>
+    
